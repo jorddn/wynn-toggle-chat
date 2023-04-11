@@ -11,6 +11,12 @@ Wynn Toggle Chat is a simple mod that adds commands to switch between and toggle
 Valid channels: all, party, guild
 ```
 
+**To toggle DMs with someone:**
+
+```
+/msg <username>
+```
+
 **To send a message in all chat:**
 > Without toggling between channels first.
 > <br>
