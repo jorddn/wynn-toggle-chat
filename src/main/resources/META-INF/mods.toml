@@ -1,0 +1,21 @@
+modLoader = "javafml"
+loaderVersion = "[44,)"
+license = "MIT"
+
+[[mods]]
+modId = "wynnchat"
+version = "${version}"
+displayName = "Wynn Toggle Chat"
+authors = "jorddn"
+description = "A simple mod that adds commands to switch between and toggle different channels so you don't have to type `/p` or `/g` before every message on WynnCraft."
+displayURL = "https://github.com/jorddn/wynn-toggle-chat"
+
+[[dependencies.wynnchat]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.3]"
+
+[[dependencies.wynnchat]]
+modId = "forge"
+mandatory = true
+versionRange = "[44.1.0,)"

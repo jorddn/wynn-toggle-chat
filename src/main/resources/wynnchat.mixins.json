@@ -1,0 +1,12 @@
+{
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8.5",
+  "client": [
+    "ChatScreenInvoker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "package": "me.jordqn.wynnchat.mixins",
+  "required": true
+}

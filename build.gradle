@@ -1,22 +1,25 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'idea'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '0.2.0'
 group = 'me.jordqn.wynnchat'
 archivesBaseName = 'wynn-toggle-chat'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 compileJava.options.encoding = "UTF-8"
 
 minecraft {
@@ -26,6 +29,9 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
+            jvmArgs "-XX:+AllowEnhancedClassRedefinition"
+            jvmArgs "-XX:HotswapAgent=fatjar"
+
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
         }
@@ -34,12 +40,17 @@ minecraft {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+}
+
+mixin {
+    config 'wynnchat.mixins.json'
 }
 
 processResources {
     inputs.property "version", version
 
-    filesMatching("mcmod.info") {
+    filesMatching("META-INF/mods.toml") {
         expand "version": version
     }
 }

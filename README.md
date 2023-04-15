@@ -1,6 +1,6 @@
 # Wynn Toggle Chat
 
-Wynn Toggle Chat is a simple mod that adds commands to switch between and toggle different channels so you don't have to type `/p` or `/g` before every message on WynnCraft.
+Wynn Toggle Chat is a simple mod that adds commands to switch between and toggle different channels so you don't have to manually type `/p` or `/g` before every message on WynnCraft.
 
 ## Commands
 
@@ -15,16 +15,6 @@ Valid channels: all, party, guild
 
 ```
 /msg <username>
-```
-
-**To send a message in all chat:**
-> Without toggling between channels first.
-> <br>
-> **Note**: `/p` and `/g` can be used as usual while in other channels.
-
-```
-/achat <message>
-/ac <message>
 ```
 
 ## Download
